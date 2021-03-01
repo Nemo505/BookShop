@@ -2,6 +2,10 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ArticleController;
+
 use Inertia\Inertia;
 
 /*
@@ -27,3 +31,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::resource('/language', LanguageController::class);
+Route::resource('/category', CategoryController::class);
+Route::resource('/article', ArticleController::class);

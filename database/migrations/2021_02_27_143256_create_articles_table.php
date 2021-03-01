@@ -15,24 +15,24 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('isbn');
+            
             $table->string('title');
+            $table->foreignId('category_id')
+                ->references('id')->on('categories')
+                ->onDelete('cascade');
+
+            $table->string('author');
             $table->string('subcontent');
             $table->text('image');
             $table->string('caption');
             $table->date('publishdate');
             $table->longtext('content');
-
-            $table->foreignId('user_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade');
+            
+            $table->integer('status');          
             $table->foreignId('language_id')
                 ->references('id')->on('languages')
                 ->onDelete('cascade');
-            $table->foreignId('category_id')
-                ->references('id')->on('categories')
-                ->onDelete('cascade');
-
+            
             $table->softDeletes();
             $table->timestamps();
         });
