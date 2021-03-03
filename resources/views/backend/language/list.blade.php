@@ -14,8 +14,7 @@
 	            <thead>
 	                <tr>
 	                    <th>No.</th>
-	                    <th>Category</th>
-	                    
+	                    <th>Category</th>	                   	                    
 	                    <th>Edit</th>
 	                    <th>Delete</th>
 	                </tr>
@@ -23,23 +22,22 @@
 	            <tfoot>
 	                <tr>
 	                    <th>No.</th>
-	                    <th>Category</th>
-	                    
+	                    <th>Category</th>                   
 	                    <th>Edit</th>
 	                    <th>Delete</th>
 	                </tr>
 	            </tfoot>
 	            <tbody>
-	            	@php $i = 1; @endphp
+	                @php $i = 1; @endphp
 
-						@foreach($categories as $category)
+						@foreach($languages as $language)
 						@php 
-							$id = $category->id;
+							$id = $language->id;
 							
 						@endphp
 	                <tr>
 	                    <td> {{ $i++ }} </td>
-	                    <td> {{ $category->name }} </td>	                    
+	                    <td> {{ $language->name }} </td>	                    
 	                    <td>
 	                    	<div class="text-center">
 	                    		<a href="" class=" btn btn-success w-50"><i class="icofont-ui-settings">Edit</i></a>
@@ -52,7 +50,7 @@
 	                    </td>
 	                </tr>
 	                
-	            @endforeach
+	            	@endforeach
 	            </tbody>
 	        </table>
 	    </div>

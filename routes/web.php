@@ -35,3 +35,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::resource('/language', LanguageController::class);
 Route::resource('/category', CategoryController::class);
 Route::resource('/article', ArticleController::class);
+Route::resource('/post', PostController::class);
