@@ -3,13 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use  App\Models\Article;
+use  App\Models\Language;
+use  App\Models\Category;
 
 class ArticleController extends Controller
 {
     
     public function index()
     {
-        return view('backend.article.list');
+        $articles = Article::all();
+        $languages = Language::all();
+        $categories = Category::all();
+        return view('backend.article.list',compact('articles','languages','categories'));
     }
 
     

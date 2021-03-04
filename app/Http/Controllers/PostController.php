@@ -3,25 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use  App\Models\Language;
 
-class LanguageController extends Controller
+class PostController extends Controller
 {
    
     public function index()
-    {
-        $languages = Language::all();
-        
-        return view('backend.language.list',compact('languages'));
-    }
-
-    
-    public function create()
     {
         //
     }
 
    
+    public function create()
+    {
+        //
+    }
+
+    
     public function store(Request $request)
     {
         //
@@ -45,7 +42,7 @@ class LanguageController extends Controller
         //
     }
 
-    
+   
     public function destroy($id)
     {
         //

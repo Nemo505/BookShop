@@ -61,7 +61,7 @@
         
             <!-- Nav Item - Category -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ asset('../category') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Category</span></a>
             </li>
@@ -75,9 +75,23 @@
 
             <!-- Nav Item - Article -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ asset('../article') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Article</span></a>
+            </li>
+
+            <!-- Nav Item - Language -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ asset('../language') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Language</span></a>
+            </li>
+
+            <!-- Nav Item - Post -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ asset('../post') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Post</span></a>
             </li>
 
             <!-- Divider -->

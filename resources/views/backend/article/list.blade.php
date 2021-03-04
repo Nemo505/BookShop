@@ -12,13 +12,14 @@
 	                <tr>
 	                    <th>No.</th>
 	                    <th>Title</th>
-	                    <th>Author</th>
 	                    <th>Category</th>
-	                    <th>Image</th>
-	                    <th>Date</th>
-	                    <th>Content</th>
+	                    <th>Author</th>                    
+	                    	                    
+	                    <th>Publishdate</th>
 	                    <th>Status</th>
-	                    <th>Update</th>
+	                    <th>Language</th>
+	                    <th>Detail</th>
+	                    <th>Edit</th>
 	                    <th>Delete</th>
 	                </tr>
 	            </thead>
@@ -26,35 +27,60 @@
 	                <tr>
 	                    <th>No.</th>
 	                    <th>Title</th>
-	                    <th>Author</th>
 	                    <th>Category</th>
-	                    <th>Image</th>
-	                    <th>Date</th>
-	                    <th>Content</th>
+	                    <th>Author</th>	                    
+	                   	                    
+	                    <th>Publishdate</th>
 	                    <th>Status</th>
-	                    <th>Update</th>
+	                    <th>Language</th>
+	                    <th>Detail</th>
+	                    <th>Edit</th>
 	                    <th>Delete</th>
+
 	                </tr>
 	            </tfoot>
 	            <tbody>
+	            	@php $i = 1; @endphp
+
+						@foreach($articles as $article)
+						@php 
+							$id = $article->id;
+							
+						@endphp
+
 	                <tr>
-	                    <td>1</td>
-	                    <td>Spring Revolution</td>
-	                    <td>Min Ko Naing</td>
-	                    <td>Politics</td>
-	                    <td><img src="" alt="22222"></td>
-	                    <td>3.3.2021</td>
-	                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	                    consequat.</td>
-	                    consequat.</td>
-	                    <td></td>
-	                    <td></td>
-	                    <td></td>
+	                    <td> {{ $i++ }} </td>
+	                    <td> {{ $article->title }} </td>
+
+	                    <td> {{ $article->category->name }} </td>
+	                    <td> {{ $article->author }} </td>	                    
+	                    {{-- <td><img src="{{ $article->image }}" style="width: 150px; height: 150px;"></td>
+
+	                    <td> {{ $article->caption }} </td> --}}	               	                    
+	                    <td> {{ $article->publishdate }} </td>
+	                    <td> {{ $article->status }} </td>
+	                    <td> {{ $article->language->name }} </td>
+
+	                    <td>
+	                    	<div class="text-center">
+	                    		<a href="" class=" btn btn-primary w-100"><i class="icofont-ui-settings">Detail</i></a>
+	                    	</div>
+	                    </td>
+
+	                    <td>
+	                    	<div class="text-center">
+	                    		<a href="" class=" btn btn-success w-100"><i class="icofont-ui-settings">Edit</i></a>
+	                    	</div>
+	                    </td>
+	                    
+	                    <td>
+	                    	<div class="text-center">
+	                    		<a href="" class=" btn btn-danger w-100"><i class="icofont-ui-settings">Delete</i></a>
+	                    	</div>
+	                    </td>
 	                </tr>
 	                
-
+	                @endforeach
 	            </tbody>
 	        </table>
 	    </div>
