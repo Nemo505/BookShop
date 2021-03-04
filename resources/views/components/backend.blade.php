@@ -66,6 +66,13 @@
                     <span>Category</span></a>
             </li>
 
+            <!-- Nav Item - Post -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('article.create')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Post</span></a>
+            </li>
+
             <!-- Nav Item - Article -->
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
