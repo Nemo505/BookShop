@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FrontendController;
 
 use Inertia\Inertia;
 
@@ -36,3 +37,5 @@ Route::resource('/language', LanguageController::class);
 Route::resource('/category', CategoryController::class);
 Route::resource('/article', ArticleController::class);
 //Route::resource('/post', ArticleController::class);
+
+Route::get('/',[FrontendController::class, 'index'])->name('frontend.home');

@@ -77,7 +77,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ asset('../article') }}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Article</span></a>
+                    <span>View all Post</span></a>
             </li>
 
             <!-- Nav Item - Language -->

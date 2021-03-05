@@ -21,11 +21,10 @@
 	                    <th>Title</th>
 	                    <th>Category</th>
 	                    <th>Author</th>                    
-	                    	                    
-	                    <th>Publishdate</th>
-	                    <th>Status</th>
+	                   	<th>Image</th>                
+	                    <th>Date</th>
 	                    <th>Language</th>
-	                    <th>Detail</th>
+	                    <th>Status</th>
 	                    <th>Edit</th>
 	                    <th>Delete</th>
 	                </tr>
@@ -36,11 +35,10 @@
 	                    <th>Title</th>
 	                    <th>Category</th>
 	                    <th>Author</th>	                    
-	                   	                    
-	                    <th>Publishdate</th>
-	                    <th>Status</th>
+	                   	<th>Image</th>           
+	                    <th>Date</th>
 	                    <th>Language</th>
-	                    <th>Detail</th>
+	                    <th>Status</th>
 	                    <th>Edit</th>
 	                    <th>Delete</th>
 
@@ -61,18 +59,18 @@
 
 	                    <td> {{ $article->category->name }} </td>
 	                    <td> {{ $article->author }} </td>	                    
-	                    {{-- <td><img src="{{ $article->image }}" style="width: 150px; height: 150px;"></td>
+	                    <td><img src="{{ $article->image }}" style="width: 150px; height: 150px;"></td>
 
-	                    <td> {{ $article->caption }} </td> --}}	               	                    
+	                    {{-- <td> {{ $article->caption }} </td>	               	                     --}}
 	                    <td> {{ $article->publishdate }} </td>
-	                    <td> {{ $article->status }} </td>
+	                    {{-- <td> {{ $article->status }} </td> --}}
 	                    <td> {{ $article->language->name }} </td>
 
 	                    <td>
 	                    	<div class="text-center">
-	                    		<a href="{{ route('article.edit',$id) }}" class=" btn btn-outline-primary w-100">
+	                    		<a href="" class=" btn btn-outline-success w-100">
 	                    			<span class="btn-label">
-										<i class="icofont-trash">Edit</i>
+										<i class="icofont-trash">Change Hide</i>
 									</span>
 								</a>
 	                    	</div>
@@ -80,9 +78,9 @@
 
 	                    <td>
 	                    	<div class="text-center">
-	                    		<a href="" class=" btn btn-outline-success w-100">
+	                    		<a href="{{ route('article.edit',$id) }}" class=" btn btn-outline-primary w-100">
 	                    			<span class="btn-label">
-										<i class="icofont-trash">Detail</i>
+										<i class="icofont-trash">Edit</i>
 									</span>
 								</a>
 	                    	</div>
