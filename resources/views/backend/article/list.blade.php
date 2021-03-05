@@ -6,6 +6,13 @@
 	    <h6 class="m-0 font-weight-bold text-primary">All Articles</h6>
 	</div>
 	<div class="card-body">
+		@if(session('successMsg') != NULL)
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				<strong>SUCCESS!</strong>
+				{{ session('successMsg')}}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		@endif
 	    <div class="table-responsive">
 	        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 	            <thead>
@@ -63,20 +70,34 @@
 
 	                    <td>
 	                    	<div class="text-center">
-	                    		<a href="" class=" btn btn-primary w-100"><i class="icofont-ui-settings">Detail</i></a>
+	                    		<a href="{{ route('article.edit',$id) }}" class=" btn btn-outline-primary w-100">
+	                    			<span class="btn-label">
+										<i class="icofont-trash">Edit</i>
+									</span>
+								</a>
 	                    	</div>
 	                    </td>
 
 	                    <td>
 	                    	<div class="text-center">
-	                    		<a href="" class=" btn btn-success w-100"><i class="icofont-ui-settings">Edit</i></a>
+	                    		<a href="" class=" btn btn-outline-success w-100">
+	                    			<span class="btn-label">
+										<i class="icofont-trash">Detail</i>
+									</span>
+								</a>
 	                    	</div>
 	                    </td>
 	                    
 	                    <td>
-	                    	<div class="text-center">
-	                    		<a href="" class=" btn btn-danger w-100"><i class="icofont-ui-settings">Delete</i></a>
-	                    	</div>
+	                    	<form class="d-inline-block" action="{{ route('article.destroy', $id) }}" method="POST" onsubmit="return confirm('Are you sure want to delete?')">
+								@csrf
+								@method('DELETE')
+								<button  class="btn btn-outline-danger">
+									<span class="btn-label">
+										<i class="icofont-trash">Remove</i>
+									</span>
+								</button>
+							</form>
 	                    </td>
 	                </tr>
 	                
