@@ -87,13 +87,6 @@
                     <span>Language</span></a>
             </li>
 
-            <!-- Nav Item - Post -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ asset('../post') }}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Post</span></a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
