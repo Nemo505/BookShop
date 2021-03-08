@@ -1,134 +1,216 @@
 <x-frontend>
-<!-- Page Content -->
-  <div class="container">
 
+  <section class="banner-sec">
+    <div class="container">
+
+      <div class="row">
+        @for($i=0; $i<=3; $i++)
+
+        <div class="col-md-3">
+          <div class="card"> 
+            <a href="{{ route('frontend.home', $data[0][$i]->id)}}">
+              <img class="img-fluid" src="{{ $data[0][$i]->image }}" alt="">
+            </a>
+              <div class="card-img-overlay"> <span class="tag tag-pill tag-danger">{{ $data[0][$i]->category->name }}</span> </div>
+                <div class="card-block">
+                  <div class="news-title">
+                    <h2 class=" title-small"><a href="#">{{ $data[0][$i]->caption }}</a></h2>
+                  </div>
+                <p class="card-text"><small class="text-time"><em>{{ $data[0][$i]->publishdate }}</em></small></p>
+                </div>
+            </div>
+        </div>
+
+        @endfor
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-01">
+  <div class="container">
     <div class="row">
 
-      <!-- Blog Entries Column -->
-      <div class="col-md-8">
+      <div class="col-lg-8 col-md-12">
+        <h3 class="heading-large">Politics</h3>
+          <div class="row">
+            @php $i =1; @endphp
+            @foreach($poarticles as $key => $poarticle)
 
-        <h1 class="my-4">Politics
-          <small>နွေဦးတော်လှန်ရေး</small>
-        </h1>
+            <div class="col-lg-6">
+              <div class="card"> <img class="img-fluid" src="{{ $poarticle->image }}" alt="">
+                <div class="card-block">
+                  <div class="news-title">
+                    <a href="#"><h2 class=" title-small">{{ $poarticle->caption }}</h2></a>
+                  </div>
+                  <p class="card-text">{{ $poarticle->subcontent }}</p>
+                  <p class="card-text"><small class="text-time"><em>{{ $poarticle->publishdate }}</em></small></p>
+                </div>
+              </div>
+          </div>
 
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="{{asset('frontend/crph-logo.png')}}" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">CRPH</h2>
-            <p class="card-text">The Cabinet of Committee Representing Pyidaungsu Hluttaw is the cabinet of Win Myint recognized by Committee Representing Pyidaungsu Hluttaw (CRPH) to remain as the legitimate government of the Republic of the Union of Myanmar after the military coup on 1 February 2021.</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on March 2, 2021 by
-            <a href="#">Mratt Chun Htet</a>
-          </div>
+           @endforeach     
         </div>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="{{asset('frontend/springrevolution.jpg')}}" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Myanmar' Spring Revolution</h2>
-            <p class="card-text">Strikes and demonstrations have engulfed Myanmar, after the Tatmadaw (Myanmar’s military) arrested State Counsellor Aung San Suu Kyi and seized government on 1 February.</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on Feb 22, 2021 by
-            <a href="#">Mratt Chun Htet</a>
-          </div>
-        </div>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2020 by
-            <a href="#">Start Bootstrap</a>
-          </div>
-        </div>
-
-        <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
-          <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
-          </li>
-          <li class="page-item disabled">
-            <a class="page-link" href="#">Newer &rarr;</a>
-          </li>
+      </div>
+          
+      <aside class="col-lg-4 side-bar col-md-12">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Latest</a> </li>
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Top</a> </li>
+            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Featured</a> </li>
         </ul>
+      
+        <!-- Tab panes -->
+        <div class="tab-content sidebar-tabing">
+          @php $i =1; @endphp
+            @foreach($toparticles as $key => $toparticle)
 
-      </div>
-
-      <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
-
-        <!-- Search Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Search</h5>
-          <div class="card-body">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-append">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Categories Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Categories</h5>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">Web Design</a>
-                  </li>
-                  <li>
-                    <a href="#">HTML</a>
-                  </li>
-                  <li>
-                    <a href="#">Freebies</a>
-                  </li>
-                </ul>
+          <div class="tab-pane active" id="home" role="tabpanel">
+            <div class="media"> <a class="media-left" href="#"> <img class="media-object" src="{{ $toparticle->image }}" alt=""> </a>
+              <div class="media-body">
+                <div class="news-title">
+                  <h2 class="title-small"><a href="#">{{ $toparticle->caption }}</a></h2>
+                </div>
+                <div class="news-auther"><span class="time">{{ $toparticle->publishdate }}</span></div>
               </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">JavaScript</a>
-                  </li>
-                  <li>
-                    <a href="#">CSS</a>
-                  </li>
-                  <li>
-                    <a href="#">Tutorials</a>
-                  </li>
-                </ul>
+            </div>
+
+          </div>
+
+            @endforeach
+
+            @php $i =1; @endphp
+            @foreach($newarticles as $key => $newarticle)
+          <div class="tab-pane" id="profile" role="tabpanel">
+            <div class="media"> 
+              <a class="media-left" href="#"> <img class="media-object" src="{{ $newarticle->image }}" alt=""> </a>
+                <div class="media-body">
+                  <div class="news-title">
+                    <h2 class="title-small"><a href="#">{{ $newarticle->caption }}</a></h2>
+                  </div>
+                <div class="news-auther"><span class="time">{{ $newarticle->publishdate }}</span></div>
               </div>
             </div>
           </div>
-        </div>
+            @endforeach
 
-        <!-- Side Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Side Widget</h5>
-          <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            @php $i =1; @endphp
+            @foreach($randomarticles as $key => $randomarticle)
+          <div class="tab-pane" id="messages" role="tabpanel">
+            <div class="media"> <a class="media-left" href="#"> <img class="media-object" src="{{ $randomarticle->image }}" alt=""> </a>
+              <div class="media-body">
+                <div class="news-title">
+                  <h2 class="title-small"><a href="#">{{ $randomarticle->caption }}</a></h2>
+                </div>
+                <div class="news-auther"><span class="time">{{ $randomarticle->publishdate }}</span></div>
+              </div>
+            </div>           
           </div>
+            @endforeach
         </div>
 
-      </div>
+      </aside>
 
     </div>
-    <!-- /.row -->
-
   </div>
-  <!-- /.container -->
+</section>
+
+<section class="section-02">
+  <div class="container">
+    <h3>
+      <div class="heading-large">International News Section</div>
+    </h3>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card"> <img class="img-fluid" src="img/media-1.jpg" alt="">
+          <div class="card-block">
+              <div class="news-title"><a href="#">
+                <h2 class=" title-small">An Alternative Form of Mental Health Care Gains a Foothold</h2>
+                </a></div>
+              <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+          </div>
+        </div>
+          <ul class="news-listing">
+                  <li><a href="#">Key Republicans sign letter warning against candidate</a></li>
+                  <li><a href="#">Obamacare Appears to Be Making People Healthier</a></li>
+                  <li><a href="#">Syria war: Why the battle for Aleppo matters</a></li>
+                  <li><a href="#">‘S.N.L.’ to Lose Two Longtime Cast Members</a></li>
+                </ul>
+        </div>             
+    </div>
+  </div>
+</section>
+
+<section class="video-gallery-sec">
+    <div class="container">
+      <h3>
+        <div class="heading-large">Today's Image Gallery</div>
+      </h3>
+
+      <div class="row">
+
+          <div class="col-md-3">
+            <div class="news-block">
+              <div class="news-media"><a class="example-image-link" href="img/media-2.jpg" data-lightbox="media-2" data-title="An Alternative Form of Mental Health Care Gains a Foothold"><img class="img-fluid example-image" src="img/media-2.jpg" alt=""></a><span class="gallery-counter"><i class="fa fa-image"></i>12</span></div>
+              <h2 class=" title-small">An Alternative Form of Mental Health Care Gains a Foothold</h2>
+              <div> </div>
+            </div>
+          </div>  
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-3">
+          <div class="news-block">
+            <div class="news-media"><a class="example-image-link" href="img/media-6.jpg" data-lightbox="media-6" data-title="Minorities Suffer From Unequal Pain Treatment"><img class="img-fluid" src="img/media-6.jpg" alt=""></a><span class="gallery-counter"><i class="fa fa-image"></i>10</span></div>
+            <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+            <div> </div>
+          </div>
+        </div>
+      </div>
+            
+    </div>
+</section>
+
+<div class="sub-footer">
+  <div class="container">
+    <h3>
+      <div class="heading-large">Top Five Stories</div>
+    </h3>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+            
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active"> <img class="img-fluid" src="img/footer-col-1.jpg">
+            <div class="carousel-caption">
+              <div class="news-title">
+                <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</a></h2>
+              </div>
+            </div>
+          </div>
+          <!-- End Item -->
+        
+          <div class="carousel-item"> <img class="img-fluid" src="img/footer-col-2.jpg">
+            <div class="carousel-caption">
+              <div class="news-title">
+                  <h2 class=" title-large"><a href="#">Delta passengers got pizza delivered to the plane</a></h2>
+              </div>
+            </div>
+          </div>
+          <!-- End Item --> 
+       </div>
+            <!-- End Carousel Inner -->
+            
+        <ul class="list-group col-sm-4">
+          <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active">
+            <h4>Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</h4>
+          </li>      
+        </ul>
+            
+        <!-- Controls -->
+        <div class="carousel-controls"> <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
+    </div>
+    <!-- End Carousel --> 
+  </div>
+</div>
 </x-frontend>
