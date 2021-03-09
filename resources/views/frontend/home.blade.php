@@ -121,27 +121,30 @@
       <div class="heading-large">International News Section</div>
     </h3>
     <div class="row">
+      @php $i =1; @endphp
+      @foreach($interarticles as $key => $interarticle)
       <div class="col-md-4">
-        <div class="card"> <img class="img-fluid" src="img/media-1.jpg" alt="">
+        <div class="card"> <img class="img-fluid" src="{{ $interarticle->image }}" alt="">
           <div class="card-block">
               <div class="news-title"><a href="#">
-                <h2 class=" title-small">An Alternative Form of Mental Health Care Gains a Foothold</h2>
+                <h2 class=" title-small">{{ $interarticle->caption }}</h2>
                 </a></div>
-              <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+              <p class="card-text"><small class="text-time"><em>{{ $interarticle->publishdate }}</em></small></p>
           </div>
         </div>
           <ul class="news-listing">
-                  <li><a href="#">Key Republicans sign letter warning against candidate</a></li>
-                  <li><a href="#">Obamacare Appears to Be Making People Healthier</a></li>
-                  <li><a href="#">Syria war: Why the battle for Aleppo matters</a></li>
-                  <li><a href="#">‘S.N.L.’ to Lose Two Longtime Cast Members</a></li>
-                </ul>
-        </div>             
+            @php $i =1; @endphp
+            @foreach($inrandomarticles as $key => $inrandomarticle)
+                  <li><a href="#">{{ $inrandomarticle->caption }}</a></li>
+            @endforeach
+          </ul>
+        </div>
+        @endforeach             
     </div>
   </div>
 </section>
 
-<section class="video-gallery-sec">
+{{-- <section class="video-gallery-sec">
     <div class="container">
       <h3>
         <div class="heading-large">Today's Image Gallery</div>
@@ -170,47 +173,93 @@
       </div>
             
     </div>
-</section>
+</section> --}}
 
 <div class="sub-footer">
   <div class="container">
     <h3>
-      <div class="heading-large">Top Five Stories</div>
+      <div class="heading-large">Top Three Stories</div>
     </h3>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
-            
+      
+      {{-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+        @php $i =1; @endphp
+        @foreach($topthreearticles as $key => $topthreearticle)
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-          <div class="carousel-item active"> <img class="img-fluid" src="img/footer-col-1.jpg">
+        
+          <div class="carousel-item active"> <img class="img-fluid" src="sa">
             <div class="carousel-caption">
               <div class="news-title">
-                <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</a></h2>
+                <h2 class=" title-large"><a href="#">how are you</a></h2>
               </div>
             </div>
           </div>
+         
           <!-- End Item -->
         
-          <div class="carousel-item"> <img class="img-fluid" src="img/footer-col-2.jpg">
+          <div class="carousel-item"> <img class="img-fluid" src="{{ $topthreearticle->image }}">
             <div class="carousel-caption">
               <div class="news-title">
-                  <h2 class=" title-large"><a href="#">Delta passengers got pizza delivered to the plane</a></h2>
+                  <h2 class=" title-large"><a href="#">{{ $topthreearticle->caption }}</a></h2>
               </div>
             </div>
           </div>
+          
           <!-- End Item --> 
        </div>
-            <!-- End Carousel Inner -->
-            
-        <ul class="list-group col-sm-4">
-          <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active">
-            <h4>Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</h4>
-          </li>      
-        </ul>
+           <!-- End Carousel Inner -->
+               
             
         <!-- Controls -->
         <div class="carousel-controls"> <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
-    </div>
+         @endforeach 
+    </div> --}}
     <!-- End Carousel --> 
+    <div class="row">
+      <div class="col-lg-6">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+     
+        <ol class="carousel-indicators">
+          @foreach( $topthreearticles as $key => $topthreearticle )
+              <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+          @endforeach
+        </ol>
+       
+        <div class="carousel-inner" role="listbox">
+          @foreach( $topthreearticles as $key => $topthreearticle )
+            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                <img class="w-100 mx-auto"  src="{{ $topthreearticle->image }}">
+                  <div class="carousel-caption d-none d-md-block">
+                    <div class="news-title">
+                      <h2 class=" title-large"><a href="#">{{ $topthreearticle->caption }}</a></h2>
+                    </div>
+                  </div>
+            </div>
+          @endforeach
+        </div>
+        
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      @foreach( $topthreearticles as $key => $topthreearticle )
+      <ul class="list-group ">
+        <li data-target="#myCarousel" data-slide-to="0" class="list-group-item list-group-item-secondary">
+          <h4 class=" title-large"><a href="#">{{ $topthreearticle->caption }}</a></h4>
+        </li>      
+      </ul>
+      @endforeach
+    </div>
+
+    </div>
   </div>
 </div>
 </x-frontend>
