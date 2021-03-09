@@ -14,7 +14,7 @@ class FrontendController extends Controller
 {
     public function index(){
 
-    	//$toparticles = Article::take(3)->get();
+    	$topthreearticles = Article::take(3)->get();
         $languages = Language::all();
         $categories = Category::all();
         
@@ -24,7 +24,10 @@ class FrontendController extends Controller
         $poarticles = Article::where('category_id', 3)->take(4)->get();
         $toparticles = Article::where('category_id', 3)->take(4)->get();
 
-    	return view('frontend.home',compact('toparticles', 'newarticles', 'languages','categories','randomarticles', 'poarticles'));
+        $interarticles = Article::where('language_id', 2)->take(3)->get();
+        $inrandomarticles = Article::where('language_id', 2)->inRandomOrder()->take(4)->get();
+
+    	return view('frontend.home',compact('toparticles', 'newarticles', 'languages','categories','randomarticles', 'poarticles', 'interarticles', 'inrandomarticles', 'topthreearticles'));
     }
 
     public function detail($id){
