@@ -26,4 +26,9 @@ class FrontendController extends Controller
 
     	return view('frontend.home',compact('toparticles', 'newarticles', 'languages','categories','randomarticles', 'poarticles'));
     }
+
+    public function detail($id){
+
+        return view('frontend.detail');
+    }
 }

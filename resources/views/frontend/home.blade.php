@@ -8,7 +8,7 @@
 
         <div class="col-md-3">
           <div class="card"> 
-            <a href="{{ route('frontend.home', $data[0][$i]->id)}}">
+            <a href="{{ route('frontend.detail', $data[0][$i]->id)}}">
               <img class="img-fluid" src="{{ $data[0][$i]->image }}" alt="">
             </a>
               <div class="card-img-overlay"> <span class="tag tag-pill tag-danger">{{ $data[0][$i]->category->name }}</span> </div>

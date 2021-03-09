@@ -25,6 +25,9 @@
       <link rel="stylesheet" type="text/css" href="{{ asset('frontend/vendor/css/font-awesome.min.css') }} " />
       <link href="{{ asset('frontend/vendor/css/lightbox.min.css') }}" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="{{ asset('frontend/vendor/css/loaders.css') }}"/>
+
+      <!-- Custom styles for this template -->
+      <link href="{{asset('frontend/detail/css/blog-post.css')}}" rel="stylesheet">
       <style></style>
       </head>
 
