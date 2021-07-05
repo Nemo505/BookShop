@@ -28,11 +28,16 @@ Route::resource('/category', CategoryController::class);
 Route::resource('/article', ArticleController::class);
 
 Route::get('/',[FrontendController::class, 'index'])->name('frontend.home');
-<<<<<<< HEAD
+
 //Route::get('politics',[FrontendController::class, 'politics'])->name('frontend.politics');
-Route::get('politics',[FrontendController::class, 'politics'])->name('frontend.politics');
 Route::get('world',[FrontendController::class, 'world'])->name('frontend.world');
-=======
+Route::get('politics',[FrontendController::class, 'politics'])->name('frontend.politics');
+Route::get('ent',[FrontendController::class, 'ent'])->name('frontend.ent');
+Route::get('sports',[FrontendController::class, 'sports'])->name('frontend.sports');
+Route::get('tech',[FrontendController::class, 'tech'])->name('frontend.tech');
+Route::get('health',[FrontendController::class, 'health'])->name('frontend.health');
+Route::get('lit',[FrontendController::class, 'literature'])->name('frontend.literature');
+
 Route::get('source/{id}',[FrontendController::class, 'detail'])->name('frontend.detail');
 
 
@@ -46,5 +51,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
->>>>>>> 98c761fa9e8c93db17d5a5c40bc4f1ec522499d8
+
 

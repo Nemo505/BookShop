@@ -4,20 +4,20 @@
 
 	      <div class="row">
 	        @php $i =1; @endphp
-            @foreach($poarticles as $key => $poarticle)
+            @foreach($worldarticles as $key => $worldarticle)
 
 
 	        <div class="col-md-3">
 	          <div class="card"> 
-	            <a href="{{ route('frontend.politics')}}">
-	              <img class="img-fluid" src="{{ $poarticle->image }}" alt="">
+	            <a href="{{ route('frontend.world')}}">
+	              <img class="img-fluid" src="{{ $worldarticle->image }}" alt="">
 	            </a>
-	              <div class="card-img-overlay"> <span class="tag tag-pill tag-danger">{{ $poarticle->category->name }}</span> </div>
+	              <div class="card-img-overlay"> <span class="tag tag-pill tag-danger">{{ $worldarticle->category->name }}</span> </div>
 	                <div class="card-block">
 	                  <div class="news-title">
-	                    <h2 class=" title-small"><a href="#">{{ $poarticle->caption }}</a></h2>
+	                    <h2 class=" title-small"><a href="#">{{ $worldarticle->caption }}</a></h2>
 	                  </div>
-	                <p class="card-text"><small class="text-time"><em>{{ $poarticle->publishdate }}</em></small></p>
+	                <p class="card-text"><small class="text-time"><em>{{ $worldarticle->publishdate }}</em></small></p>
 	                </div>
 	            </div>
 	        </div>
