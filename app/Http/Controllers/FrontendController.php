@@ -29,4 +29,10 @@ class FrontendController extends Controller
 
     	return view('frontend.home',compact('toparticles', 'newarticles', 'languages','categories','randomarticles', 'poarticles', 'interarticles', 'inrandomarticles', 'topthreearticles'));
     }
+    public function politics(){
+        $languages = Language::all();
+        $categories = Category::all();
+        $poarticles = Article::where('category_id', 3)->take(8)->get();
+        return view('frontend.politics',compact('poarticles', 'categories','languages'));
+    }
 }

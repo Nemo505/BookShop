@@ -24,8 +24,8 @@
         @endfor
       </div>
     </div>
-  </div>
-</section>
+  
+  </section>
 
 <section class="section-01">
   <div class="container">
@@ -253,7 +253,7 @@
       @foreach( $topthreearticles as $key => $topthreearticle )
       <ul class="list-group ">
         <li data-target="#myCarousel" data-slide-to="0" class="list-group-item list-group-item-secondary">
-          <h4 class=" title-large"><a href="#">{{ $topthreearticle->caption }}</a></h4>
+          <h4 class="title-large"><a href="#">{{ $topthreearticle->caption }}</a></h4>
         </li>      
       </ul>
       @endforeach

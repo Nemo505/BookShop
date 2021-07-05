@@ -39,3 +39,7 @@ Route::resource('/article', ArticleController::class);
 //Route::resource('/post', ArticleController::class);
 
 Route::get('/',[FrontendController::class, 'index'])->name('frontend.home');
+//Route::get('politics',[FrontendController::class, 'politics'])->name('frontend.politics');
+Route::get('politics',[FrontendController::class, 'politics'])->name('frontend.politics');
+Route::get('world',[FrontendController::class, 'world'])->name('frontend.world');
+
