@@ -1,14 +1,15 @@
 <x-frontend>
-	<!-- Page Content -->
+ <section>
+    <!-- Page Content -->
   <div class="container">
 
     <div class="row">
 
       <!-- Post Content Column -->
-      <div class="col-lg-8">
+      <div class="col-lg-12">
 
         <!-- Title -->
-        <h1 class="mt-5">Post Title</h1>
+        <h1 class="mt-4">Post Title</h1>
 
         <!-- Author -->
         <p class="lead">
@@ -35,12 +36,7 @@
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
 
-        <blockquote class="blockquote">
-          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer class="blockquote-footer">Someone famous in
-            <cite title="Source Title">Source Title</cite>
-          </footer>
-        </blockquote>
+
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
 
@@ -52,12 +48,28 @@
 
 
 
+
+
       </div>
+
 
 
     </div>
     <!-- /.row -->
 
+
+
+
+
   </div>
   <!-- /.container -->
+  <div class="container">
+    <p class="pull-right">Left aligned text on all viewport sizes.</p>
+<p class="text-center">Center aligned text on all viewport sizes.</p>
+<p class="text-right">Right aligned text on all viewport sizes.</p>
+  </div>
+
+ </section>
+
+
 </x-frontend>

@@ -10,6 +10,7 @@
 
       <!--Bootstrap core CSS-->
       <link href="{{ asset('frontend/vendor/css/bootstrap.min.css') }}" rel="stylesheet">
+      
 
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!--[if lt IE 9]>
@@ -26,7 +27,7 @@
       <link href="{{ asset('frontend/vendor/css/lightbox.min.css') }}" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="{{ asset('frontend/vendor/css/loaders.css') }}"/>
 
-      <!-- Custom styles for this template -->
+      <!-- Custom styles for detail template -->
       <link href="{{asset('frontend/detail/css/blog-post.css')}}" rel="stylesheet">
       <style></style>
       </head>

@@ -7,7 +7,7 @@
         @for($i=0; $i<=3; $i++)
 
         <div class="col-md-3">
-          <div class="card"> 
+          <div class="card "> 
             <a href="{{ route('frontend.detail', $data[0][$i]->id)}}">
               <img class="img-fluid" src="{{ $data[0][$i]->image }}" alt="">
             </a>
@@ -33,6 +33,7 @@
 
       <div class="col-lg-8 col-md-12">
         <h3 class="heading-large">Politics</h3>
+
           <div class="row">
             @php $i =1; @endphp
             @foreach($poarticles as $key => $poarticle)
