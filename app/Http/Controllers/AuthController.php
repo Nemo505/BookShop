@@ -35,7 +35,7 @@ class AuthController extends Controller
     		$credentials = $request->only('email', 'password');
     		Auth::attempt($credentials);
 
-    		return redirect('category');
+    		return redirect('article');
 
     	}else{
     		return redirect()->back();
