@@ -60,7 +60,7 @@
                 <h1>Grafreez News<small>Get the latest News</small></h1>
               </div>
         <div class="col-md-6 col-lg-5 offset-lg-3 admin-bar hidden-sm-down">
-                <nav class="nav nav-inline"> <a href="#" class="nav-link"><span class="ping"></span><i class="fa fa-envelope-o"></i></a> <a href="#" class="nav-link"><i class="fa fa-bell-o"></i></a> <a href="#" class="nav-link">Bruce Wayne <img class="img-fluid img-circle" src="img/admin-bg.jpg"></a> </nav>
+                <nav class="nav nav-inline"> <a href="#" class="nav-link">Bruce Wayne <img class="img-fluid img-circle" src="storage/image/news.jpg"></a> </nav>
               </div>
       </div>
           </div>
