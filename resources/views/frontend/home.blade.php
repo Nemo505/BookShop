@@ -1,5 +1,4 @@
 <x-frontend>
-
   <section class="banner-sec">
     <div class="container">
 
@@ -14,7 +13,7 @@
               <div class="card-img-overlay"> <span class="tag tag-pill tag-danger">{{ $data[0][$i]->category->name }}</span> </div>
                 <div class="card-block">
                   <div class="news-title">
-                    <h2 class=" title-small"><a href="#">{{ $data[0][$i]->caption }}</a></h2>
+                    <h2 class=" title-small"><a href="{{ route('frontend.detail', $data[0][$i]->id)}}">{{ $data[0][$i]->caption }}</a></h2>
                   </div>
                 <p class="card-text"><small class="text-time"><em>{{ $data[0][$i]->publishdate }}</em></small></p>
                 </div>
@@ -42,7 +41,7 @@
               <div class="card"> <img class="img-fluid" src="{{ $poarticle->image }}" alt="">
                 <div class="card-block">
                   <div class="news-title">
-                    <a href="#"><h2 class=" title-small">{{ $poarticle->caption }}</h2></a>
+                    <a href="{{ route('frontend.detail', $poarticle->id)}}"><h2 class=" title-small">{{ $poarticle->caption }}</h2></a>
                   </div>
                   <p class="card-text">{{ $poarticle->subcontent }}</p>
                   <p class="card-text"><small class="text-time"><em>{{ $poarticle->publishdate }}</em></small></p>
@@ -67,10 +66,10 @@
             @foreach($toparticles as $key => $toparticle)
 
           <div class="tab-pane active" id="home" role="tabpanel">
-            <div class="media"> <a class="media-left" href="#"> <img class="media-object" src="{{ $toparticle->image }}" alt=""> </a>
+            <div class="media"> <a class="media-left" href="{{ route('frontend.detail', $toparticle->id)}}"> <img class="media-object" src="{{ $toparticle->image }}" alt=""> </a>
               <div class="media-body">
                 <div class="news-title">
-                  <h2 class="title-small"><a href="#">{{ $toparticle->caption }}</a></h2>
+                  <h2 class="title-small"><a href="{{ route('frontend.detail', $toparticle->id)}}">{{ $toparticle->caption }}</a></h2>
                 </div>
                 <div class="news-auther"><span class="time">{{ $toparticle->publishdate }}</span></div>
               </div>
@@ -84,10 +83,10 @@
             @foreach($newarticles as $key => $newarticle)
           <div class="tab-pane" id="profile" role="tabpanel">
             <div class="media"> 
-              <a class="media-left" href="#"> <img class="media-object" src="{{ $newarticle->image }}" alt=""> </a>
+              <a class="media-left" href="{{ route('frontend.detail', $newarticle->id)}}"> <img class="media-object" src="{{ $newarticle->image }}" alt=""> </a>
                 <div class="media-body">
                   <div class="news-title">
-                    <h2 class="title-small"><a href="#">{{ $newarticle->caption }}</a></h2>
+                    <h2 class="title-small"><a href="{{ route('frontend.detail', $newarticle->id)}}">{{ $newarticle->caption }}</a></h2>
                   </div>
                 <div class="news-auther"><span class="time">{{ $newarticle->publishdate }}</span></div>
               </div>
@@ -98,10 +97,10 @@
             @php $i =1; @endphp
             @foreach($randomarticles as $key => $randomarticle)
           <div class="tab-pane" id="messages" role="tabpanel">
-            <div class="media"> <a class="media-left" href="#"> <img class="media-object" src="{{ $randomarticle->image }}" alt=""> </a>
+            <div class="media"> <a class="media-left" href="{{ route('frontend.detail', $randomarticle)}}"> <img class="media-object" src="{{ $randomarticle->image }}" alt=""> </a>
               <div class="media-body">
                 <div class="news-title">
-                  <h2 class="title-small"><a href="#">{{ $randomarticle->caption }}</a></h2>
+                  <h2 class="title-small"><a href="{{ route('frontend.detail', $randomarticle->id)}}">{{ $randomarticle->caption }}</a></h2>
                 </div>
                 <div class="news-auther"><span class="time">{{ $randomarticle->publishdate }}</span></div>
               </div>
@@ -127,7 +126,7 @@
       <div class="col-md-4">
         <div class="card"> <img class="img-fluid" src="{{ $interarticle->image }}" alt="">
           <div class="card-block">
-              <div class="news-title"><a href="#">
+              <div class="news-title"><a href="{{ route('frontend.detail', $interarticle->id)}}">
                 <h2 class=" title-small">{{ $interarticle->caption }}</h2>
                 </a></div>
               <p class="card-text"><small class="text-time"><em>{{ $interarticle->publishdate }}</em></small></p>
@@ -136,7 +135,7 @@
           <ul class="news-listing">
             @php $i =1; @endphp
             @foreach($inrandomarticles as $key => $inrandomarticle)
-                  <li><a href="#">{{ $inrandomarticle->caption }}</a></li>
+                  <li><a href="{{ route('frontend.detail', $interarticle)}}">{{ $inrandomarticle->caption }}</a></li>
             @endforeach
           </ul>
         </div>
@@ -232,7 +231,7 @@
                 <img class="w-100 mx-auto"  src="{{ $topthreearticle->image }}">
                   <div class="carousel-caption d-none d-md-block">
                     <div class="news-title">
-                      <h2 class=" title-large"><a href="#">{{ $topthreearticle->caption }}</a></h2>
+                      <h2 class=" title-large"><a href="{{ route('frontend.detail', $topthreearticle->id)}}">{{ $topthreearticle->caption }}</a></h2>
                     </div>
                   </div>
             </div>
@@ -254,7 +253,7 @@
       @foreach( $topthreearticles as $key => $topthreearticle )
       <ul class="list-group ">
         <li data-target="#myCarousel" data-slide-to="0" class="list-group-item list-group-item-secondary">
-          <h4 class="title-large"><a href="#">{{ $topthreearticle->caption }}</a></h4>
+          <h4 class="title-large"><a href={{ route('frontend.detail', $topthreearticle->id)}}>{{ $topthreearticle->caption }}</a></h4>
         </li>      
       </ul>
       @endforeach

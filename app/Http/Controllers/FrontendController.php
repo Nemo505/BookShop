@@ -75,8 +75,10 @@ class FrontendController extends Controller
     }
 
     public function detail($id){
-
-        return view('frontend.detail');
+        $article = Article::find($id);     
+        $languages = Language::all();
+        $categories = Category::all();
+        return view('frontend.detail',compact('article','categories','languages'));
 
         
     }
