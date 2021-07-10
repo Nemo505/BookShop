@@ -71,7 +71,7 @@
     <button class="navbar-toggler hidden-lg-up " type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation"> &#9776; </button>
     <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar2"> <a class="navbar-brand" href="#">Responsive navbar</a>
             <ul class="nav navbar-nav ">
-        <li class="nav-item active"> <a class="nav-link" href="{{ route('frontend.home')}}">Home <span class="sr-only">(current)</span></a> </li>
+        <li class="nav-item active"> <a class="nav-link active" href="{{ route('frontend.home')}}">Home <span class="sr-only">(current)</span></a> </li>
         <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.world')}}">World</a> </li>
         <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.politics')}}">Politics</a> </li>
         
@@ -108,8 +108,8 @@
         <h6 class="heading-footer">QUICK LINKS</h6>
         <ul class="footer-ul">
                 <li><a href="#"> Career</a></li>
-                <li><a href="#"> Privacy Policy</a></li>
-                <li><a href="#"> Terms & Conditions</a></li>
+                <li><a href="{{ route('frontend.privacy')}}"> Privacy Policy</a></li>
+                <li><a href="{{ route('frontend.rule')}}"> Terms & Conditions</a></li>
                 <li><a href="#"> Client Gateway</a></li>
                 <li><a href="#"> Ranking</a></li>
                 <li><a href="#"> Case Studies</a></li>
@@ -161,7 +161,8 @@
 <script src="{{ asset('frontend/vendor/js/jquery.min.js') }}"></script> 
 <script src="{{ asset('frontend/vendor/js/bootstrap.min.js') }}"></script> 
 <script src="{{ asset('frontend/vendor/js/core.js') }}"></script> 
-<script src="{{ asset('frontend/vendor/js/lightbox-plus-jquery.min.js')}}"></script> 
+<script src="{{ asset('frontend/vendor/js/lightbox-plus-jquery.min.js')}}"></script>
+
 
 </body>
 </html>

@@ -23,7 +23,7 @@
 
           <!-- Preview Image -->      
           <div class="text-center">          
-            <img src="{{ $article->image }}" class="mb-0 img-fluid rounded" alt="Responsive image">
+            <img src="{{ $article->image }}" class="mb-0 img-fluid rounded" alt="Responsive image" style="width: 800px; height: auto;">
           </div>
             <h3><small class="text-muted">{{ $article->caption }}</small></h3>
           <hr>

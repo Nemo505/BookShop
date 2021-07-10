@@ -82,4 +82,14 @@ class FrontendController extends Controller
 
         
     }
+
+    public function privacy(){
+
+        return view('frontend.privacy');
+    }
+
+    public function rule(){
+
+        return view('frontend.rule');
+    }
 }
