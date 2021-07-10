@@ -42,6 +42,8 @@ Route::get('rule',[FrontendController::class,'rule'])->name('frontend.rule');
 
 Route::get('source/{id}',[FrontendController::class, 'detail'])->name('frontend.detail');
 Route::get('aboutus',[FrontendController::class, 'aboutus'])->name('frontend.aboutus');
+Route::get('contact',[FrontendController::class, 'contact'])->name('frontend.contact');
+
 
 Route::get('login',[AuthController::class, 'loginForm'])->name('login');
 Route::post('login',[AuthController::class, 'login']);
