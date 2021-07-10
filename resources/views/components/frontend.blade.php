@@ -60,7 +60,7 @@
                 <h1>Grafreez News<small>Get the latest News</small></h1>
               </div>
         <div class="col-md-6 col-lg-5 offset-lg-3 admin-bar hidden-sm-down">
-                <nav class="nav nav-inline"> <a href="#" class="nav-link">Bruce Wayne <img class="img-fluid img-circle" src="storage/image/news.jpg"></a> </nav>
+                {{-- <nav class="nav nav-inline"> <a href="#" class="nav-link">Bruce Wayne <img class="img-fluid img-circle" src="storage/image/news.jpg"></a> </nav> --}}
               </div>
       </div>
           </div>
@@ -83,10 +83,10 @@
         <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.literature')}}">Literature</a> </li>
       </ul>
             <form class="pull-xs-right">
-        <div class="search">
+        {{-- <div class="search">
                 <input type="text" class="form-control" maxlength="64" placeholder="Search" />
                 <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-              </div>
+              </div> --}}
       </form>
           </div>
   </div>
