@@ -24,8 +24,8 @@ use Inertia\Inertia;
 
 
 Route::resource('/language', LanguageController::class);
-Route::resource('/category', CategoryController::class)->middleware('auth');
-Route::resource('/article', ArticleController::class);
+Route::resource('/category', CategoryController::class);
+Route::resource('/article', ArticleController::class)->middleware('');
 
 Route::get('/',[FrontendController::class, 'index'])->name('frontend.home');
 
@@ -37,6 +37,8 @@ Route::get('sports',[FrontendController::class, 'sports'])->name('frontend.sport
 Route::get('tech',[FrontendController::class, 'tech'])->name('frontend.tech');
 Route::get('health',[FrontendController::class, 'health'])->name('frontend.health');
 Route::get('lit',[FrontendController::class, 'literature'])->name('frontend.literature');
+Route::get('privacy',[FrontendController::class, 'privacy'])->name('frontend.privacy');
+Route::get('rule',[FrontendController::class,'rule'])->name('frontend.rule');
 
 Route::get('source/{id}',[FrontendController::class, 'detail'])->name('frontend.detail');
 Route::get('aboutus',[FrontendController::class, 'aboutus'])->name('frontend.aboutus');

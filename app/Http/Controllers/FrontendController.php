@@ -85,4 +85,16 @@ class FrontendController extends Controller
    public function aboutus(){
     return view('frontend.aboutus');
    }
+
+
+    public function privacy(){
+
+        return view('frontend.privacy');
+    }
+
+    public function rule(){
+
+        return view('frontend.rule');
+    }
+
 }
