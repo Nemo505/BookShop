@@ -29,10 +29,12 @@
 
       <!-- Custom styles for detail template -->
       <link href="{{asset('frontend/detail/css/blog-post.css')}}" rel="stylesheet">
+     <!--  contact us -->
+      <link href="{{asset('frontend/contact/assets/css/style.css')}}" rel="stylesheet">
       <style></style>
       </head>
 
-      <body>
+      <body style="padding-top: 0;">
           <div class="loader loader-bg">
         <div class="loader-inner ball-pulse-rise">
           <div></div>
@@ -43,8 +45,8 @@
         </div>
       </div>
 <header>
-        <div class="small-top">
-    <div class="container">
+    <div class="small-top">
+        <div class="container">
             <div class="col-lg-4 date-sec hidden-sm-down">
         <div id="Date"></div>
       </div>
@@ -107,10 +109,10 @@
             <div class="col-lg-2 col-md-4">
         <h6 class="heading-footer">QUICK LINKS</h6>
         <ul class="footer-ul">
-                <li><a href="#"> Career</a></li>
+                
                 <li><a href="#"> Privacy Policy</a></li>
                 <li><a href="#"> Terms & Conditions</a></li>
-                <li><a href="#"> Client Gateway</a></li>
+                
                 <li><a href="#"> Ranking</a></li>
                 <li><a href="#"> Case Studies</a></li>
               </ul>
@@ -145,11 +147,11 @@
           </div>
     <div class="col-lg-6 col-md-8">
             <ul class="bottom_ul">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Faq's</a></li>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="#">Site Map</a></li>
+        <li><a href="{{route('frontend.aboutus')}}">About us</a></li>
+
+        
+        <li><a href="">Contact us</a></li>
+        
       </ul>
           </div>
   </div>
@@ -162,6 +164,7 @@
 <script src="{{ asset('frontend/vendor/js/bootstrap.min.js') }}"></script> 
 <script src="{{ asset('frontend/vendor/js/core.js') }}"></script> 
 <script src="{{ asset('frontend/vendor/js/lightbox-plus-jquery.min.js')}}"></script> 
+
 
 </body>
 </html>

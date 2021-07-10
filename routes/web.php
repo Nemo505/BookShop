@@ -39,7 +39,7 @@ Route::get('health',[FrontendController::class, 'health'])->name('frontend.healt
 Route::get('lit',[FrontendController::class, 'literature'])->name('frontend.literature');
 
 Route::get('source/{id}',[FrontendController::class, 'detail'])->name('frontend.detail');
-
+Route::get('aboutus',[FrontendController::class, 'aboutus'])->name('frontend.aboutus');
 
 Route::get('login',[AuthController::class, 'loginForm'])->name('login');
 Route::post('login',[AuthController::class, 'login']);
