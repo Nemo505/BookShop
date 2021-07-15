@@ -24,8 +24,8 @@ use Inertia\Inertia;
 
 
 Route::resource('/language', LanguageController::class);
-Route::resource('/category', CategoryController::class);
-Route::resource('/article', ArticleController::class)->middleware('');
+Route::resource('/category', CategoryController::class)->middleware('auth');
+Route::resource('/article', ArticleController::class);
 
 Route::get('/',[FrontendController::class, 'index'])->name('frontend.home');
 

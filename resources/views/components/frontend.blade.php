@@ -34,7 +34,10 @@
       <style></style>
       </head>
 
-      <body style="padding-top: 0;">
+      <body style="padding-top: 0">
+
+      
+
           <div class="loader loader-bg">
         <div class="loader-inner ball-pulse-rise">
           <div></div>
@@ -73,16 +76,16 @@
     <button class="navbar-toggler hidden-lg-up " type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation"> &#9776; </button>
     <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar2"> <a class="navbar-brand" href="#">Responsive navbar</a>
             <ul class="nav navbar-nav ">
-        <li class="nav-item active"> <a class="nav-link active" href="{{ route('frontend.home')}}">Home <span class="sr-only">(current)</span></a> </li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.world')}}">World</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.politics')}}">Politics</a> </li>
+        <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}"> <a class="nav-link" href="{{ route('frontend.home')}}">Home {{-- <span class="sr-only">(current)</span> --}}</a> </li>
+        <li class="nav-item {{ (request()->is('world')) ? 'active' : '' }}"> <a class="nav-link" href="{{ route('frontend.world')}}">World</a> </li>
+        <li class="nav-item {{ (request()->is('politics')) ? 'active' : '' }}"> <a class="nav-link" href="{{ route('frontend.politics')}}">Politics</a> </li>
         
-        <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.ent')}}">Entertainment</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.sports')}}">Sports</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.tech')}}">Tech</a> </li>
+        <li class="nav-item {{ (request()->is('ent')) ? 'active' : '' }}"> <a class="nav-link" href="{{ route('frontend.ent')}}">Entertainment</a> </li>
+        <li class="nav-item {{ (request()->is('sports')) ? 'active' : '' }}"> <a class="nav-link" href="{{ route('frontend.sports')}}">Sports</a> </li>
+        <li class="nav-item {{ (request()->is('tech')) ? 'active' : '' }}"> <a class="nav-link" href="{{ route('frontend.tech')}}">Tech</a> </li>
         
-        <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.health')}}">Health</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('frontend.literature')}}">Literature</a> </li>
+        <li class="nav-item {{ (request()->is('health')) ? 'active' : '' }}"> <a class="nav-link" href="{{ route('frontend.health')}}">Health</a> </li>
+        <li class="nav-item {{ (request()->is('lit')) ? 'active' : '' }}"> <a class="nav-link" href="{{ route('frontend.literature')}}">Literature</a> </li>
       </ul>
             <form class="pull-xs-right">
         {{-- <div class="search">
@@ -156,6 +159,15 @@
 <script src="{{ asset('frontend/vendor/js/bootstrap.min.js') }}"></script> 
 <script src="{{ asset('frontend/vendor/js/core.js') }}"></script> 
 <script src="{{ asset('frontend/vendor/js/lightbox-plus-jquery.min.js')}}"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+     $(".nav a").on("click", function(){
+      $(".nav").find(".active").removeClass("active");
+      // $(this).parent().addClass("active");
+   });
+  });
+</script>
 
 
 
