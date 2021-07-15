@@ -24,21 +24,38 @@ class AuthController extends Controller
     	])->validate();
 
     	$email = $request->email;
-    	$password = $request->password;
+    	$password = Hash::make($request->password);
     	// dd($password);
     	$user = User::where('email',$email)->first();
 
     	// dd($user);
 
-    	if ($user->password == $password) {
+        if (Hash::check($request->password, $user->password)) {
+            
+            $role = $user->getRoleNames();
+
+            $credentials = $request->only('email', 'password');
+            Auth::attempt($credentials);
+
+            // dd($role);
+            if ($role[0]=='admin') {
+                
+                return redirect('category');
+            }else{
+
+                return redirect()->back();
+            }
+        }
+
+    	// if ($user->password == $password) {
     		
-    		$credentials = $request->only('email', 'password');
-    		Auth::attempt($credentials);
+    	// 	$credentials = $request->only('email', 'password');
+    	// 	Auth::attempt($credentials);
 
-    		return redirect('category');
+    	// 	return redirect('category');
 
-    	}else{
-    		return redirect()->back();
-    	}
+    	// }else{
+    	// 	return redirect()->back();
+    	// }
     }
 }
