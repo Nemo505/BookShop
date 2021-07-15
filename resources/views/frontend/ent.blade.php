@@ -15,7 +15,7 @@
 	              <div class="card-img-overlay"> <span class="tag tag-pill tag-danger">{{ $entarticle->category->name }}</span> </div>
 	                <div class="card-block">
 	                  <div class="news-title">
-	                    <h2 class=" title-small"><a href="#">{{ $entarticle->caption }}</a></h2>
+	                    <h2 class=" title-small"><a href="{{ route('frontend.detail',$entarticle->id)}}">{{ $entarticle->caption }}</a></h2>
 	                  </div>
 	                <p class="card-text"><small class="text-time"><em>{{ $entarticle->publishdate }}</em></small></p>
 	                </div>

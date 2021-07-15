@@ -15,7 +15,7 @@
 	              <div class="card-img-overlay"> <span class="tag tag-pill tag-danger">{{ $litarticle->category->name }}</span> </div>
 	                <div class="card-block">
 	                  <div class="news-title">
-	                    <h2 class=" title-small"><a href="#">{{ $litarticle->caption }}</a></h2>
+	                    <h2 class=" title-small"><a href="{{ route('frontend.detail', $litarticle->id)}}">{{ $litarticle->caption }}</a></h2>
 	                  </div>
 	                <p class="card-text"><small class="text-time"><em>{{ $litarticle->publishdate }}</em></small></p>
 	                </div>

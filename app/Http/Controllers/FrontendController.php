@@ -82,6 +82,15 @@ class FrontendController extends Controller
 
         
     }
+    public function aboutus(){
+
+        return view('frontend.aboutus');
+    }
+    public function contact(){
+
+        return view('frontend.contact');
+    }
+
 
     public function privacy(){
 
@@ -92,4 +101,5 @@ class FrontendController extends Controller
 
         return view('frontend.rule');
     }
+
 }
